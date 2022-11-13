@@ -24,7 +24,7 @@ const convertCurrency = async (from = 'USD', to = 'JOD', amount = 100) => {
       `https://api.exchangeratesapi.io/latest?base=${from}&access_key=`
     ); */
     const response = await axios.get(
-      `https://api.apilayer.com/exchangerates_data/latest?symbols=${to}&base=${from}&apikey=kxgK9Mo6riPicR1Ro1q6fjO2SAmSrqA7`
+      `https://api.apilayer.com/exchangerates_data/latest?symbols=${to}&base=${from}&apikey=${process.env.API_KEY}`
     );
     const rate = response.data.rates[to];
     console.log(rate);
