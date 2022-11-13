@@ -52,8 +52,7 @@ app.get('/', async (req, res) => {
   let { from = 'USD', to = 'JOD', amount = 100 } = req.query;
 
   const result = await convertCurrency(from, to, amount);
-  // res.json({message : result});
-  res.send(result);
+  res.json({message : result});
 });
 
 const server = app.listen(app.get('port'), () => {
