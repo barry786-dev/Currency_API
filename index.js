@@ -52,7 +52,9 @@ app.get('/', async (req, res) => {
   let { from, to, amount } = req.query;
 
   if (!from || !to || !amount) {
-    res.send(`Please provide the following query parameters: from, to, amount`);
+    res.json({
+      message: `Please provide the following query parameters: from, to, amount`,
+    });
   } else {
     const result = await convertCurrency(from, to, amount);
     res.json({ message: result });
