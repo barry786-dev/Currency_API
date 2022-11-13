@@ -56,7 +56,7 @@ app.get('/', async (req, res) => {
   res.send('Hello World!');
 });
 
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(app.get('port'), () => {
   console.log(`Server is up on ${app.get('host')}${server.address().port}`);
 });
 /* const from = 'USA';
