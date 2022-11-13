@@ -55,7 +55,7 @@ app.get('/', async (req, res) => {
   res.json({message : result});
 });
 
-const server = app.listen(app.get('port'), () => {
+const server = app.listen(process.env.PORT, () => {
   console.log(`Server is up on ${app.get('host')}${server.address().port}`);
 });
 /* const from = 'USA';
